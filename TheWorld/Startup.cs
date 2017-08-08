@@ -21,6 +21,10 @@ namespace TheWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseDefaultFiles();
+
+            app.UseStaticFiles();
+
             //loggerFactory.AddConsole();
 
             //if (env.IsDevelopment())
@@ -28,10 +32,10 @@ namespace TheWorld
             //    app.UseDeveloperExceptionPage();
             //}
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("<html><body><h3>Hello World!</h3></body></html>");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("<html><body><h3>Hello World!</h3></body></html>");
+            //});
         }
     }
 }
